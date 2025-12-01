@@ -1,5 +1,71 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 body{
-    background: white;
+    background: green;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: white;
+    top: 10px;
+    left: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    background-color: blue;
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+    transition: all .2s ease;
+
+    &:hover {
+    scale: 1.1;
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+}
+    }
+
+#card {
+    background-color: white;
+    margin-top: 20px;
+    width: 30rem;
+    height: 45rem ;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.5);
+    
+    span {
+         align-self: end;
+         font-size: 7em;
+    }
+    span:first-child {
+        align-self: start;
+    }
+    h1 {
+        font-size: 10em;
+    }
+}
+
+.red {
+    span {
+         color: red;
+    }
 }
