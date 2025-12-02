@@ -16,13 +16,25 @@
   </head>
   <body>
     <!-- Write your HTML code here, you can delete everything withing the body tags -->
+     
     <div id="card" class="red">
       <span></span>
       <h1></h1>
       <span></span>
     </div>
     <div id="timer"></div>
-    <button>Generate a New Card</button>
+    <div id='buttons'>
+      <button id="buttonCard">Generate a New Card</button>
+      <button id="buttonCard" class="buttonSizeCard">Change Size</button>
+    </div>
+    <form id="sizeCard">
+      <label for="">Height</label>
+      <input type="text" value="" name="height" id="height">
+      <label for="">width</label>
+      <input type="text" value="" name="width" id="width">
+      <button type="submit" id="buttonSubmit">change</button>
+    </form>
+    
 
     <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>

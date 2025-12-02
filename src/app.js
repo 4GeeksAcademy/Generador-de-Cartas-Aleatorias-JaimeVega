@@ -18,7 +18,9 @@ window.onload = function() {
   const valueCard = document.querySelector('h1')
   const suitCard = document.querySelectorAll('span')
   const timerElement = document.querySelector('#timer')
-  const button = document.querySelector('button')
+  const buttonChangeCard = document.querySelector('#buttonCard')
+  const buttonSizeCard = document.querySelector('.buttonSizeCard')
+  const formSizeCard = document.querySelector('#sizeCard')
 
   let suitsCardRandom = Math.floor(Math.random()*4) + 1;
   let valuesCardRandom = Math.floor(Math.random()*14);
@@ -61,7 +63,6 @@ window.onload = function() {
   function timer (seconds) {
     let second = seconds;
     setInterval(() => {
-      console.log(second);
       timerElement.innerText = second;
 
       if (second === 0) {
@@ -79,13 +80,27 @@ window.onload = function() {
 
   }
 
-  button.addEventListener('click', () => {
+  buttonChangeCard.addEventListener('click', () => {
     suitsCardRandom = Math.floor(Math.random()*4) + 1;
     valuesCardRandom = Math.floor(Math.random()*14);
     changeSuitsClass();
     generateCardContent();
     assingIconSuits();
   })
+
+  buttonSizeCard.addEventListener('click', () => {
+    formSizeCard.classList.toggle('no-show');
+  })
+
+  formSizeCard.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const height = formSizeCard.height.value;
+    const width = formSizeCard.width.value;
+
+    console.log("Altura:", height);
+    console.log("Ancho:", width);
+});
 
   changeSuitsClass();
   generateCardContent();

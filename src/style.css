@@ -21,7 +21,52 @@ body{
     font-size: 30px;
 }
 
-button {
+#sizeCard {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: blue;
+    z-index: 100;
+    top: 50%;
+    left: 45%;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    label{
+        font-size: 15px;
+        color: white;
+    }
+    input {
+        width: 100%;
+        height: 40px;
+    }
+}
+
+#buttonSubmit {
+    background: none;
+    border: none;
+    font-size: 15px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 12px;
+    margin-top: 5px;
+}
+
+.no-show {
+    display: none !important;
+}
+
+#buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#buttonCard {
     padding: 12px 25px;
     font-size: 16px;
     font-weight: 600;
