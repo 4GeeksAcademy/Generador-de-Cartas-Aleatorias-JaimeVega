@@ -15,7 +15,7 @@ window.onload = function() {
   };
 
   const cardElement = document.querySelector('#card')
-  const valueCard = document.querySelector('h1')
+  const numberCard = document.querySelector('h1')
   const suitCard = document.querySelectorAll('span')
   const timerElement = document.querySelector('#timer')
   const buttonChangeCard = document.querySelector('#buttonCard')
@@ -23,7 +23,7 @@ window.onload = function() {
   const formSizeCard = document.querySelector('#sizeCard')
 
   let suitsCardRandom = Math.floor(Math.random()*4) + 1;
-  let valuesCardRandom = Math.floor(Math.random()*14);
+  let numberCardRandom = Math.floor(Math.random()*14);
   
   
   function changeSuitsClass() {
@@ -42,8 +42,8 @@ window.onload = function() {
   }
 
   function generateCardContent() {
-    let value = valuesCardRandom;
-    switch (valuesCardRandom) {
+    let value = numberCardRandom;
+    switch (numberCardRandom) {
       case 0:
         value = "A";
         break;
@@ -57,7 +57,7 @@ window.onload = function() {
         value = "K";
         break;
     }
-    valueCard.innerText = value;
+    numberCard.innerText = value;
   }
 
   function timer (seconds) {
@@ -69,7 +69,7 @@ window.onload = function() {
         second = seconds;
         timerElement.innerText = second;
         suitsCardRandom = Math.floor(Math.random()*4) + 1;
-        valuesCardRandom = Math.floor(Math.random()*14);
+        numberCardRandom = Math.floor(Math.random()*14);
         changeSuitsClass();
         generateCardContent();
         assingIconSuits();
@@ -80,9 +80,25 @@ window.onload = function() {
 
   }
 
+  function changeSize(height,width) {
+    
+    cardElement.style.height = `${height}px`;
+    cardElement.style.width = `${width}px`;
+    const sizeNumber = height/4;
+    numberCard.style.fontSize = `${sizeNumber}px`;
+
+    suitCard.forEach(span => {
+      const size = height/5;
+      span.style.fontSize = `${size}px`;
+    });
+
+    console.log("Altura:", height);
+    console.log("Ancho:", width);
+  }
+
   buttonChangeCard.addEventListener('click', () => {
     suitsCardRandom = Math.floor(Math.random()*4) + 1;
-    valuesCardRandom = Math.floor(Math.random()*14);
+    numberCardRandom = Math.floor(Math.random()*14);
     changeSuitsClass();
     generateCardContent();
     assingIconSuits();
@@ -94,12 +110,11 @@ window.onload = function() {
 
   formSizeCard.addEventListener("submit", (event) => {
     event.preventDefault();
-
     const height = formSizeCard.height.value;
     const width = formSizeCard.width.value;
-
-    console.log("Altura:", height);
-    console.log("Ancho:", width);
+    changeSize(height,width)
+    formSizeCard.classList.toggle('no-show');
+    
 });
 
   changeSuitsClass();
